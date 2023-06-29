@@ -13,29 +13,24 @@ const rl = readline.createInterface({
 
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
-  // Write code here
-  // Use the unit test to see what is expected
-  /*
-
-  Expected inputs:
-  "rock", "paper", "scissors"
-
-  Expected outputs:
-  "It's a tie!"
-  "Hand two wins!"
-  "Hand one wins!"
-  */
   const fixedHand1 = hand1.toLowerCase().trim();
   const fixedHand2 = hand2.toLowerCase().trim();
-  if (fixedHand1 === fixedHand2) {
-    return "It's a tie!";
-  } else if (fixedHand1 === "rock") {
-    return fixedHand2 === "scissors" ? "Hand one wins!" : "Hand two wins!";
-  } else if (fixedHand1 === "paper") {
-    return fixedHand2 === "rock" ? "Hand one wins!" : "Hand two wins!";
-  } else if (fixedHand1 === "scissors") {
-    return fixedHand2 === "paper" ? "Hand one wins!" : "Hand two wins!";
-  }
+  const expectedInputs = ["rock", "paper", "scissors"];
+
+  if (
+    expectedInputs.includes(fixedHand1) &&
+    expectedInputs.includes(fixedHand2)
+  ) {
+    if (fixedHand1 === fixedHand2) {
+      return "It's a tie!";
+    } else if (fixedHand1 === "rock") {
+      return fixedHand2 === "scissors" ? "Hand one wins!" : "Hand two wins!";
+    } else if (fixedHand1 === "paper") {
+      return fixedHand2 === "rock" ? "Hand one wins!" : "Hand two wins!";
+    } else if (fixedHand1 === "scissors") {
+      return fixedHand2 === "paper" ? "Hand one wins!" : "Hand two wins!";
+    }
+  } else return `Invalid input(s)`;
 };
 
 // the first function called in the program to get an input from the user
